@@ -20,7 +20,7 @@ namespace HostServiceApplication
         [OperationContract]
         bool UpdateHost(HostData hostData);
         [OperationContract]
-        bool CreateHost(HostData hostData);
+        bool CreateHost(HostData hostData, string password);
         [OperationContract]
         bool DeleteHost(int id);
 

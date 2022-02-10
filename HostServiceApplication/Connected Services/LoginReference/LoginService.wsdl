@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoginService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:29524/LoginService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:29524/LoginService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILoginService_LoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUser" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_LoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_LoginHost_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginHost" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_LoginHost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginHostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_LoginAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAdmin" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_LoginAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_CreateHost_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHost" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_CreateHost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_GetUserEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_GetUserEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_GetHostEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHostEmail" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_GetHostEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHostEmailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILoginService">
+    <wsdl:operation name="LoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/LoginUser" message="tns:ILoginService_LoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/LoginUserResponse" message="tns:ILoginService_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginHost">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/LoginHost" message="tns:ILoginService_LoginHost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/LoginHostResponse" message="tns:ILoginService_LoginHost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/LoginAdmin" message="tns:ILoginService_LoginAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/LoginAdminResponse" message="tns:ILoginService_LoginAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/CreateUser" message="tns:ILoginService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/CreateUserResponse" message="tns:ILoginService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateHost">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/CreateHost" message="tns:ILoginService_CreateHost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/CreateHostResponse" message="tns:ILoginService_CreateHost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/GetUserEmail" message="tns:ILoginService_GetUserEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/GetUserEmailResponse" message="tns:ILoginService_GetUserEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHostEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/GetHostEmail" message="tns:ILoginService_GetHostEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/GetHostEmailResponse" message="tns:ILoginService_GetHostEmail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILoginService" type="tns:ILoginService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginUser">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginHost">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/LoginHost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAdmin">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/LoginAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHost">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/CreateHost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/GetUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHostEmail">
+      <soap:operation soapAction="http://tempuri.org/ILoginService/GetHostEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoginService">
+    <wsdl:port name="BasicHttpBinding_ILoginService" binding="tns:BasicHttpBinding_ILoginService">
+      <soap:address location="http://localhost:29524/LoginService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

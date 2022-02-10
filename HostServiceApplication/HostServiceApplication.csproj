@@ -73,10 +73,22 @@
     <Content Include="App_Data\HostDB_log.ldf">
       <DependentUpon>HostDB.mdf</DependentUpon>
     </Content>
+    <None Include="Connected Services\LoginReference\LoginService.disco" />
+    <None Include="Connected Services\LoginReference\configuration91.svcinfo" />
+    <None Include="Connected Services\LoginReference\configuration.svcinfo" />
+    <None Include="Connected Services\LoginReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="HostService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\LoginReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="DataModel.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="HostService.svc.cs">
@@ -85,8 +97,17 @@
     <Compile Include="IHostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LoginReference\LoginService.wsdl" />
+    <None Include="Connected Services\LoginReference\LoginService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LoginReference\LoginService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -94,6 +115,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\LoginReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
