@@ -9,7 +9,70 @@
 //------------------------------------------------------------------------------
 
 namespace HostServiceApplication.LoginReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LoginData", Namespace="http://schemas.datacontract.org/2004/07/LoginServiceApplication")]
+    [System.SerializableAttribute()]
+    public partial class LoginData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LoginReference.ILoginService")]
@@ -22,10 +85,10 @@ namespace HostServiceApplication.LoginReference {
         System.Threading.Tasks.Task<bool> LoginUserAsync(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/LoginHost", ReplyAction="http://tempuri.org/ILoginService/LoginHostResponse")]
-        bool LoginHost(string email, string password);
+        HostServiceApplication.LoginReference.LoginData LoginHost(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/LoginHost", ReplyAction="http://tempuri.org/ILoginService/LoginHostResponse")]
-        System.Threading.Tasks.Task<bool> LoginHostAsync(string email, string password);
+        System.Threading.Tasks.Task<HostServiceApplication.LoginReference.LoginData> LoginHostAsync(string email, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/LoginAdmin", ReplyAction="http://tempuri.org/ILoginService/LoginAdminResponse")]
         bool LoginAdmin(string username, string password);
@@ -93,11 +156,11 @@ namespace HostServiceApplication.LoginReference {
             return base.Channel.LoginUserAsync(email, password);
         }
         
-        public bool LoginHost(string email, string password) {
+        public HostServiceApplication.LoginReference.LoginData LoginHost(string email, string password) {
             return base.Channel.LoginHost(email, password);
         }
         
-        public System.Threading.Tasks.Task<bool> LoginHostAsync(string email, string password) {
+        public System.Threading.Tasks.Task<HostServiceApplication.LoginReference.LoginData> LoginHostAsync(string email, string password) {
             return base.Channel.LoginHostAsync(email, password);
         }
         
