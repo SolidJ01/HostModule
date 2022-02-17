@@ -45,7 +45,7 @@ namespace HostAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HostAPI v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("v1/swagger.json", "HostAPI v1"));
             }
 
             app.UseRouting();
