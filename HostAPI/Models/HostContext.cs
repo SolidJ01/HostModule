@@ -9,6 +9,11 @@ namespace HostAPI.Models
 {
     public class HostContext : DbContext
     {
-        DbSet<Host> Hosts;
+        public DbSet<Host> Hosts { get; set; }
+
+        public HostContext(DbContextOptions options) : base (options)
+        {
+            
+        }
     }
 }

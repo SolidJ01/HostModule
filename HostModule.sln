@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostClientApplication", "HostClientApplication\HostClientApplication.csproj", "{437886C2-10C3-4A83-B0BE-E91C2B776DAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostServiceApplication", "HostServiceApplication\HostServiceApplication.csproj", "{73C1A833-FCDB-45BE-8AB7-DA927A494A37}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostAPI", "HostAPI\HostAPI.csproj", "{CD9BBEA7-0024-44AE-9C69-8BC12C01FB95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HostAPI", "HostAPI\HostAPI.csproj", "{CD9BBEA7-0024-44AE-9C69-8BC12C01FB95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{437886C2-10C3-4A83-B0BE-E91C2B776DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{437886C2-10C3-4A83-B0BE-E91C2B776DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{437886C2-10C3-4A83-B0BE-E91C2B776DAE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73C1A833-FCDB-45BE-8AB7-DA927A494A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73C1A833-FCDB-45BE-8AB7-DA927A494A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73C1A833-FCDB-45BE-8AB7-DA927A494A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73C1A833-FCDB-45BE-8AB7-DA927A494A37}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CD9BBEA7-0024-44AE-9C69-8BC12C01FB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD9BBEA7-0024-44AE-9C69-8BC12C01FB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD9BBEA7-0024-44AE-9C69-8BC12C01FB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
