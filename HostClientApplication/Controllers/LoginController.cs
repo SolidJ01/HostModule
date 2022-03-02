@@ -12,5 +12,9 @@ namespace HostClientApplication.Controllers
         {
             return View();
         }
+        public IActionResult Skapa()
+        {
+            return View();
+        }
     }
 }

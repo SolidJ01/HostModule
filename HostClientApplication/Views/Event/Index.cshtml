@@ -20,8 +20,100 @@
         <h2 class="div_3">Ny</h2>
         <br>
         <br>
+        @*
+        <table class="div_4">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.City)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Priority)
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.VenueId)
+                    </th>
 
-        
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Location)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Category)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Priority)
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VenueId)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+            *@
         <table class="div_4">
             <thead>
 
@@ -38,7 +130,7 @@
             </thead>
 
         </table>
-
+        
     </div>
 
     <div class="skapa">
@@ -52,3 +144,4 @@
 
 </body>
 </html>
+
