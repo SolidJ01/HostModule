@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <header id="navbar">
         <img src="~/images/Evenue101.png" />
-        <h1>Arrangörsportal</h1>
+        <h1>
+            Arrangörsportal
+            @if (User.Identity.IsAuthenticated)
+            {
+                <span> | @User.Identity.Name</span>
+            }
+        </h1>
+        @Html.ActionLink("Logga Ut", "Logout", "Login")
     </header>
     <main role="main">
         @RenderBody()

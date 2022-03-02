@@ -3,11 +3,12 @@
 }
 
 <section class="logincontainer">
-    <form>
+    <form action="/Login/Index" method="post" enctype="multipart/form-data">
         <div>
             <h2>Inloggning</h2>
         </div>
-        <input type="text" name="email" placeholder="Email" />
+        @ViewBag.Message
+        <input type="text" name="name" placeholder="Username" />
         <input type="password" name="password" placeholder="Lösenord" />
         <input type="submit" value="Logga In" />
     </form>
