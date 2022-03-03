@@ -6,19 +6,20 @@
     --colorprimary: #313177;
     --colorsecondary: #D36716;
     --colorsecondaryactive: #f78128;
+    --colortertiary: #343a40;
 
-    --borderradius: 6px;
+    --borderradius: 4px;
 }
 
 body {
     margin: 0;
     font-family: sans-serif;
-    padding-top: 60px;
-    background-color: rgb(200, 200, 200);
+    padding-top: /*60px*/106px;
+    background-color: rgb(200, 200, 200) !important;
 }
 
 #navbar {
-    position: fixed;
+    /*position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -26,10 +27,10 @@ body {
     background-color: var(--colorprimary);
     color: white;
     padding: 10px 45px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);*/
 }
 
-#navbar img, #navbar h1 {
+/*#navbar img, #navbar h1 {
     float: left;
 }
 
@@ -41,14 +42,22 @@ body {
     margin: 0;
     font-size: 24px;
     padding: 6px 15px;
+}*/
+
+#logoutbut {
+    background-color: white;
+    color: black;
+    padding: .5rem 1.5rem;
+    border-radius: var(--borderradius);
+    margin-left: 15px;
 }
 
 .logincontainer {
     position: absolute;
-    top: 60px;
+    top: /*60*/106px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - /*60*/106px);
 }
 
 .logincontainer form {
@@ -74,7 +83,7 @@ body {
     height: 50px;
     padding: 10px;
     text-align: center;
-    background-color: var(--colorprimary);
+    background-color: var(--colortertiary);
     border-radius: var(--borderradius);
 }
 
@@ -112,15 +121,17 @@ body {
 
 .profileeditor {
     width: 1440px;
-    margin: 100px auto;
+    max-width: calc(100% - 90px);
+    margin: 50px auto;
     border-radius: var(--borderradius);
     background-color: white;
+    line-height: normal;
 }
 
 .profileeditor header {
     width: 100%;
     height: 60px;
-    background-color: var(--colorprimary);
+    background-color: var(--colortertiary);
     padding: 10px 45px;
     border-radius: var(--borderradius);
 }
@@ -131,6 +142,7 @@ body {
     color: white;
     font-size: 24px;
     padding: 8px 0;
+    line-height: 24px;
 }
 
 .profileeditor header a {
@@ -138,18 +150,24 @@ body {
     height: 40px;
     font-size: 20px;
     padding: 10px 30px;
-    background-color: var(--colorsecondary);
+    background-color: white;
     border-radius: var(--borderradius);
-    color: white;
+    color: black;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: normal;
     transition: background-color .25s, transform .25s, box-shadow .25s;
+    line-height: 20px;
 }
 
-.profileeditor header a:hover {
-    background-color: var(--colorsecondaryactive);
+.profileeditor header a:hover, .profileeditor header a:focus {
+    /*background-color: var(--colorsecondaryactive);*/
     transform: translateY(-4px);
     box-shadow: 0px 4px 6px rgba(0,0,0,0.75);
+}
+
+.profileeditor header a:active {
+    transform: translateY(-0px);
+    box-shadow: none;
 }
 
 .profileeditor #profileform {
@@ -175,9 +193,18 @@ body {
 .profileeditor #profileform #description {
     width: 100%;
     margin-bottom: 20px;
-    min-height: 650px;
+    height: 100%;
     background-color: #D2D2D2;
     border-radius: var(--borderradius);
     font-size: 20px;
     padding: 10px 20px;
+}
+
+.profileeditor #profileform #deletebut {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #971b1b;
+    color: white;
+    border-radius: var(--borderradius);
 }
