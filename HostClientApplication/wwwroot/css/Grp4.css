@@ -1,0 +1,133 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+
+nav {
+    background-image: linear-gradient(to right, #303076ff, #d36716ff);
+}
+
+.navbar-brand {
+    width: 80px;
+}
+
+.nav-link {
+    color: white;
+}
+
+    .nav-link:hover {
+        color: black;
+    }
+
+.pb-3 {
+    margin-top: 120px;
+}
+
+body {
+    height: 100%;
+}
+
+footer {
+    background-image: linear-gradient(to right, #303076ff, #d36716ff);
+}
+
+.card-img-top {
+    height: 225px;
+    width: 100%;
+    display: block;
+}
+
+img.d-block.w-100 {
+    background-color: darkgray;
+    height: 400px;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.btn-secondary {
+    background-color: #7B7BAB;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #303076ff;
+        border: none;
+    }

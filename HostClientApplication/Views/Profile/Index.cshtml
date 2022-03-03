@@ -1,0 +1,22 @@
+﻿@model Host
+
+<section class="profileeditor">
+    <header>
+        <h2>Profil</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+    </header>
+    <form id="profileform" action="/Profile/Index" method="post" enctype="multipart/form-data">
+        <section>
+            <input type="text" name="name" placeholder="Namn" value="@Model.Name" />
+            <input type="text" name="email" placeholder="Emailaddress" />
+            <input type="text" name="phone" placeholder="Telefonnummer" value="@Model.Phone" />
+            <input type="text" name="website" placeholder="Webbsideadress" value="@Model.Website" />
+            <a id="deletebut" href="/Profile/Delete">Avsluta Konto</a>
+        </section>
+        <section>
+            <div id="description" contenteditable="true">
+                @Model.Description
+            </div>
+            <input id="descriptionhidden" type="hidden" name="description" placeholder="Beskrivning" value="@Model.Description" />
+        </section>
+    </form>
+</section>

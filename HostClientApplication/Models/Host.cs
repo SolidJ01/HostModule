@@ -1,4 +1,4 @@
-namespace HostServiceApplication
+namespace HostClientApplication.Models
 {
     using System;
     using System.Collections.Generic;
