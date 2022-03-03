@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HostClientApplication.Controllers
 {
-    
+    [Authorize]
     public class HomeController : Controller
     {
 
