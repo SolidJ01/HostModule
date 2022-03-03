@@ -5,17 +5,21 @@
 :root {
     --colorprimary: #313177;
     --colorsecondary: #D36716;
+    --colorsecondaryactive: #f78128;
+    --colortertiary: #343a40;
+
+    --borderradius: 4px;
 }
 
 body {
     margin: 0;
     font-family: sans-serif;
-    padding-top: 60px;
-    background-color: rgb(200, 200, 200);
+    padding-top: /*60px*/106px;
+    background-color: rgb(200, 200, 200) !important;
 }
 
-header {
-    position: fixed;
+#navbar {
+    /*position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -23,32 +27,40 @@ header {
     background-color: var(--colorprimary);
     color: white;
     padding: 10px 45px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);*/
 }
 
-header img, header h1 {
+/*#navbar img, #navbar h1 {
     float: left;
 }
 
-header img {
+#navbar img {
     height: 40px;
 }
 
-header h1 {
+#navbar h1 {
     margin: 0;
     font-size: 24px;
     padding: 6px 15px;
+}*/
+
+#logoutbut {
+    background-color: white;
+    color: black;
+    padding: .5rem 1.5rem;
+    border-radius: var(--borderradius);
+    margin-left: 15px;
 }
 
 .logincontainer {
     position: absolute;
-    top: 60px;
+    top: /*60*/106px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - /*60*/106px);
 }
 
-form {
+.logincontainer form {
     width: 500px;
     /*margin: 100px auto;*/
     position: absolute;
@@ -60,9 +72,10 @@ form {
     position: relative;
     padding-top: 50px;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+    border-radius: var(--borderradius);
 }
 
-form div {
+.logincontainer form div {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,25 +83,27 @@ form div {
     height: 50px;
     padding: 10px;
     text-align: center;
-    background-color: var(--colorprimary);
+    background-color: var(--colortertiary);
+    border-radius: var(--borderradius);
 }
 
-form div h2 {
+.logincontainer form div h2 {
     margin: 0;
     font-size: 24px;
     color: white;
 }
 
-form input {
+.logincontainer form input {
     width: 100%;
     margin: 20px auto 0;
     padding: 10px 20px;
     font-size: 22px;
     border: none;
     background-color: rgb(200, 200, 200);
+    border-radius: var(--borderradius);
 }
 
-form input[type=submit] {
+.logincontainer form input[type=submit] {
     background-color: var(--colorprimary);
     color: white;
     font-weight: bold;
@@ -96,8 +111,100 @@ form input[type=submit] {
     transition: background-color .25s, transform .25s, box-shadow .25s;
 }
 
-form input[type=submit]:hover {
+.logincontainer form input[type=submit]:hover {
     background-color: var(--colorsecondary);
     transform: translateY(-4px);
     box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+}
+
+
+
+.profileeditor {
+    width: 1440px;
+    max-width: calc(100% - 90px);
+    margin: 50px auto;
+    border-radius: var(--borderradius);
+    background-color: white;
+    line-height: normal;
+}
+
+.profileeditor header {
+    width: 100%;
+    height: 60px;
+    background-color: var(--colortertiary);
+    padding: 10px 45px;
+    border-radius: var(--borderradius);
+}
+
+.profileeditor header h2 {
+    float: left;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    padding: 8px 0;
+    line-height: 24px;
+}
+
+.profileeditor header a {
+    float: right;
+    height: 40px;
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: var(--borderradius);
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    transition: background-color .25s, transform .25s, box-shadow .25s;
+    line-height: 20px;
+}
+
+.profileeditor header a:hover, .profileeditor header a:focus {
+    /*background-color: var(--colorsecondaryactive);*/
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.75);
+}
+
+.profileeditor header a:active {
+    transform: translateY(-0px);
+    box-shadow: none;
+}
+
+.profileeditor #profileform {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profileeditor #profileform section {
+    padding: 30px 45px;
+}
+
+.profileeditor #profileform input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #D2D2D2;
+    color: black;
+    border: none;
+    border-radius: var(--borderradius);
+}
+
+.profileeditor #profileform #description {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100%;
+    background-color: #D2D2D2;
+    border-radius: var(--borderradius);
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.profileeditor #profileform #deletebut {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #971b1b;
+    color: white;
+    border-radius: var(--borderradius);
 }
