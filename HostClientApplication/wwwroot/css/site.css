@@ -3,18 +3,19 @@
 }
 
 :root {
-    --colorprimary: #313177;
-    --colorsecondary: #D36716;
-    --colorsecondaryactive: #f78128;
-    --colortertiary: #343a40;
+    --colorprimary: #313177; /* Blue */
+    --colorsecondary: #D36716; /* Orange */
+    --colorsecondaryactive: #f78128; /* Orange Active */
+    --colortertiary: #343a40; /* Black */
 
-    --borderradius: 4px;
+    --borderradius: 4px; /* Rounded corners */
 }
 
 body {
     margin: 0;
     font-family: sans-serif;
-    padding-top: /*60px*/106px;
+    padding-top: /*60px*/
+    106px;
     background-color: rgb(200, 200, 200) !important;
 }
 

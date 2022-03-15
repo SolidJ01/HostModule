@@ -3,55 +3,59 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
+ 
 <div id="FlorimJobbarMycket" class="container">
+
     <header>
         <h2>Skapa/Redigera Event</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
     </header>
 
 
-    <form id="profileform" action="/Event/Index" method="post" enctype="multipart/form-data">
+    <form asp-action="Edit" id="profileform" method="post">
         <div class="eventuppgifter">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="input-box">
 
-                <input type="text" placeholder="Namn" required>
+                <input asp-for="Name" type="text" placeholder="Namn" required>
             </div>
             <div class="input-box">
 
-                <input type="text" placeholder="Datum" required>
+                <input asp-for="Date" type="text" placeholder="Datum" required>
             </div>
             <div class="input-box">
 
-                <input type="text" placeholder="Starttid" required>
+                <input asp-for="StartTime" type="text" placeholder="Starttid" required>
             </div>
             <div class="input-box">
 
-                <input type="text" placeholder="Sluttid" required>
+                <input asp-for="EndTime" type="text" placeholder="Sluttid" required>
             </div>
             <div class="input-box">
 
-                <input type="text" placeholder="Stad" required>
+                <input asp-for="City" type="text" placeholder="Stad" required>
             </div>
             <div class="input-box">
 
-                <input type="text" placeholder="Venue" required>
+                <input asp-for="VenueId" type="text" placeholder="Venue" required>
             </div>
             <div class="input-box">
 
-                <input type="text" placeholder="Bild" required>
+                <input type="file" id="img" name="img" accept="image/*" placeholder="Välj bild">
+
             </div>
 
             <div id="Beskrivning" contenteditable="true">
 
-                <input id="Beskrivninghidden" type="hidden" name="beskrivningAvArrangör" placeholder="Beskrivning" required />
+                <input asp-for="Description" id="Beskrivninghidden" type="hidden" name="beskrivningAvArrangör" placeholder="Beskrivning" required />
 
             </div>
 
-
+            <div class="form-group">
+                <input type="submit" name="Create" value="Lägg till" class="btn btn-primary" />
+            </div>
 
         </div>
     </form>
-
-
-
 </div>
+
