@@ -93,6 +93,12 @@ body {
     color: white;
 }
 
+.logincontainer form p {
+    font-size: 22px;
+    color: red;
+    text-align:center;
+}
+
 .logincontainer form input {
     width: 100%;
     margin: 20px auto 0;
