@@ -64,7 +64,8 @@ namespace HostClientApplication.Controllers
             Local receivedLocal = new Local();
             using (var httpClient = new HttpClient())
             {
-                //httpClient.DefaultRequestHeaders.Add("Key", "Secret@123");
+                
+
                 StringContent content = new StringContent(JsonConvert.SerializeObject(local), Encoding.UTF8, "application/json");
 
                 using (var response = await httpClient.PostAsync("http://193.10.202.72/LocalScheduleServiceAPI/api/Locals", content))

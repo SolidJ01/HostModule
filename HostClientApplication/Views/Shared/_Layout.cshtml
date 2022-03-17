@@ -29,14 +29,27 @@
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Om oss</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Event">Event</a>
+                                <a class="nav-link" asp-area="" asp-controller="Event" asp-action="Event">Event</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Local" asp-action="Local">Local</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="LocalBookingController" asp-action="LocalBooking">Local bokning</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
+                                <a class="nav-link" href="/LocalBooking/">Local bokning</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Local/">Local</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="/Event/">Events</a>
                             </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="/Profile/">Profil</a>
                             </li>

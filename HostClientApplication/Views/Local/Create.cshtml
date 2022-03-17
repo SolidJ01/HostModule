@@ -8,57 +8,52 @@
 
 <h4>Local</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div id="FlorimJobbarMycket" class="container">
+    <header>
+    <h2>Skapa ny Lokal</h2>
+    </header>
+    <div class="eventuppgifter">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" id="profileform"></div>
 
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="ImgUrl" class="control-label"></label>
                 <input asp-for="ImgUrl" class="form-control" />
-                <span asp-validation-for="ImgUrl" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+            <div id="Beskrivning">
+                <label asp-for="Description" class="control-label" id="Beskrivninghidden"></label>
                 <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="Ramp" class="control-label"></label>
                 <input asp-for="Ramp" class="form-control" />
-                <span asp-validation-for="Ramp" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="MaxNumPeople" class="control-label"></label>
                 <input asp-for="MaxNumPeople" class="form-control" />
-                <span asp-validation-for="MaxNumPeople" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="ZIPCode" class="control-label"></label>
                 <input asp-for="ZIPCode" class="form-control" />
-                <span asp-validation-for="ZIPCode" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="City" class="control-label"></label>
                 <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="GPS" class="control-label"></label>
                 <input asp-for="GPS" class="form-control" />
-                <span asp-validation-for="GPS" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

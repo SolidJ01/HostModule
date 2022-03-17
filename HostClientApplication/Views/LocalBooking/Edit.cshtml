@@ -4,50 +4,43 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div id="FlorimJobbarMycket" class="container">
 
-<h4>LocalBooking</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    <header>
+        <h2>Redigera bokningar för lokaler</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+    </header>
+    <div class="eventuppgifter">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div asp-validation-summary="ModelOnly" class="profileform"></div>
+            <div class="input-box">
                 <label asp-for="Id" class="control-label"></label>
                 <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="StartDateTime" class="control-label"></label>
                 <input asp-for="StartDateTime" class="form-control" />
-                <span asp-validation-for="StartDateTime" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="EndDateTime" class="control-label"></label>
                 <input asp-for="EndDateTime" class="form-control" />
-                <span asp-validation-for="EndDateTime" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="Category" class="control-label"></label>
                 <input asp-for="Category" class="form-control" />
-                <span asp-validation-for="Category" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="LocalId" class="control-label"></label>
                 <input asp-for="LocalId" class="form-control" />
-                <span asp-validation-for="LocalId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="EventId" class="control-label"></label>
                 <input asp-for="EventId" class="form-control" />
-                <span asp-validation-for="EventId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <label asp-for="HostId" class="control-label"></label>
                 <input asp-for="HostId" class="form-control" />
-                <span asp-validation-for="HostId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="input-box">
                 <input type="hidden" asp-for="Id" />
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
