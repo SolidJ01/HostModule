@@ -35,7 +35,8 @@ namespace HostClientApplication.Controllers
                 {
                     Debug.WriteLine("Login Failed");
                     ViewBag.Message = "Fel Användarnamn och lösenord";
-                    return RedirectToAction("Index", "Login");
+                    // return RedirectToAction("Index", "Login");
+                    return View();
                 }
 
                 var content = await response.Content.ReadAsStringAsync();
@@ -86,14 +87,52 @@ namespace HostClientApplication.Controllers
             HttpClient client = new HttpClient();
             using (var response = await client.PostAsJsonAsync("http://193.10.202.73/HostAPI/Hosts",  host))
             {
-                string apiResponse = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(apiResponse);
-                host = JsonConvert.DeserializeObject<Host>(apiResponse);
+                if (true)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(apiResponse);
+                    host = JsonConvert.DeserializeObject<Host>(apiResponse);
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Inloggning misslyckades";
+                    return View();
+                }
+                
             }
 
             //Bryt ut logindetails objekt och ge userId från skapad host, skicka till login Api
+            LoginDetails login = new LoginDetails();
+            login.Username = extendedHost.Username;
+            login.Password = extendedHost.Password;
+            login.AccessLevel = extendedHost.AccessLevel;
+            login.UserId = host.Id;
+
             
+            using (var response = await client.PostAsJsonAsync("http://193.10.202.75/LoginAPI/api/LoginDetails", login))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(apiResponse);
+                    login = JsonConvert.DeserializeObject<LoginDetails>(apiResponse);
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Kunde inte skapa konto";
+                    return View();
+                }
+            }
+
+
             //Om allt lyckats logga in användare på de skapade kontot
+            var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+            identity.AddClaim(new Claim(ClaimTypes.Name, host.Name));
+            identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, host.Id.ToString()));
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+            return RedirectToAction("", "Home");
+
         }
 
 
