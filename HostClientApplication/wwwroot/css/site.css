@@ -99,6 +99,7 @@ body {
     font-size: 22px;
     color: red;
     text-align:center;
+    margin: 0 !important;
 }
 
 .logincontainer form input {
@@ -123,6 +124,16 @@ body {
     background-color: var(--colorsecondary);
     transform: translateY(-4px);
     box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+}
+
+.logincontainer form a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #639eb5;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
 }
 
 

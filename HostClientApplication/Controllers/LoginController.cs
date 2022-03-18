@@ -87,7 +87,7 @@ namespace HostClientApplication.Controllers
             HttpClient client = new HttpClient();
             using (var response = await client.PostAsJsonAsync("http://193.10.202.73/HostAPI/Hosts",  host))
             {
-                if (true)
+                if (response.IsSuccessStatusCode)
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     Console.WriteLine(apiResponse);
@@ -95,7 +95,7 @@ namespace HostClientApplication.Controllers
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Inloggning misslyckades";
+                    ViewBag.ErrorMessage = "Kunde inte skapa profil";
                     return View();
                 }
                 
@@ -163,12 +163,12 @@ namespace HostClientApplication.Controllers
 
             ViewBag.Message = "Nåt gick fel";
             return RedirectToAction("Index", "Login");
-        }
+        }*/
 
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Login");
-        }*/
+        }
     }
 }
