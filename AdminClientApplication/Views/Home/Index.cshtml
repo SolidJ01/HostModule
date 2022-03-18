@@ -1,0 +1,26 @@
+﻿
+<link href="~/css/site.css" rel="stylesheet" />
+<section class="profileeditor">
+    <header>
+
+        <h2>Redigera Arrangör</h2>
+        <a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+        <a id="deletebut" href="/Profile/Delete">Avsluta Konto</a>
+    </header>
+    <form id="profileform" action="/Profile/Index" method="post" enctype="multipart/form-data">
+        <section>
+            <input type="text" name="name" placeholder="Namn" value="" />
+            <input type="text" name="email" placeholder="Emailaddress" />
+            <input type="text" name="phone" placeholder="Telefonnummer" value="" />
+            <input type="text" name="website" placeholder="Webbsideadress" value="" />
+            <input type="text" name="website" placeholder="AccessLevel" value="" />
+            <div id="description" contenteditable="true">
+              
+            </div>
+            <input id="descriptionhidden" type="hidden" name="Beskrivning" placeholder="Beskrivning" value="" />
+
+            
+        </section>
+
+    </form>
+</section>
