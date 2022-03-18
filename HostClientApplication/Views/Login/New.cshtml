@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<section class="logincontainer">
+    <form action="/Login/New" method="post" enctype="multipart/form-data">
+        <div>
+            <h2>Inloggning</h2>
+        </div>
+       <p> @ViewBag.ErrorMessage </p>
+     
+        <input type="text" name="name" placeholder="Name" />
+        <input type="text" name="phone" placeholder="Phone" />
+   
+        <input type="text" name="website" placeholder="Website" />
+        <input type="text" name="Username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Lösenord" />
+        <input type="text" name="accesslevel" placeholder="AccessLevel" />
+       
+
+        <input type="submit" value="Registrera Dig" />
+
+
+    </form>
+</section>
+
