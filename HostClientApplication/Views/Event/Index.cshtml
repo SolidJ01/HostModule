@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Event>
 @{
     ViewData["Title"] = "Events";
 }
@@ -8,24 +8,29 @@
         <h2>Events</h2><a href="/Events/Create">Ny</a>
     </header>
     <section class="events">
-        <article id="1">
-            <a href="">
-                <section class="eventheader">
-                    <!--<a href=""></a>-->
-                    <h3>Way out west</h3>
-                    <section class="infogrid">
-                        <p><i class="fas fa-map-marker-alt"></i> Trollhättan</p>
-                        <p><i class="fas fa-calendar-alt"></i> 2022-02-22</p>
-                    </section>
+        @foreach (var e in Model)
+        {
+            <article id="@e.Id">
+                <h3>@e.Name</h3>
+                <section class="infogrid">
+                    <div>
+                        <p><i class="fas fa-user-friends"></i> @e.Booking.Count/@e.TicketsMax</p>
+                        <div class="progressbar"><span style="width: @e.BookedPercentage%;"></span></div>
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> @e.City</p>
+                    <p><i class="fas fa-calendar-alt"></i> @e.Date</p>
                 </section>
-            </a>
-            <section class="products">
-                <a href="">Ny</a>
-            </section>
-            <a class="expander" href="javascript:void(0)">
-                Produkter
-            </a>
-        </article>
+                <section class="moreinfo">
+                </section>
+                <nav>
+                    <a href="" class="lbutton">
+                        <i class="fas fa-angle-down"></i> Mer detaljer
+                    </a>
+                    <a href="/Event/Edit/@e.Id" class="rbutton">Redigera</a>
+                    <a href="/Event/Products/@e.Id" class="rbutton">Produkter</a>
+                </nav>
+            </article>
+        }
     </section>
 </section>
 

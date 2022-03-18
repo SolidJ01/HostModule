@@ -121,8 +121,109 @@ body {
 
 
 
-.eventlist {
-    width: 1140px;
+.productlist .products article {
+    width: 100%;
+    background-color: var(--colorprimarydark);
+    border-radius: var(--borderradiusbig);
+    color: white;
+    padding: 15px 25px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    column-gap: 20px;
+}
+
+.productlist .products article img {
+    height: 85px;
+    width: 100%;
+    border-radius: var(--borderradius);
+    object-fit: cover;
+    background-color: rgba(75, 108, 34, 0.50);
+}
+
+.productlist .products article .prow, .productlist .products article .stern {
+    width: 100%;
+    height: 40px;
+}
+
+.productlist .products article .prow h3 {
+    font-size: 28px;
+    float: left;
+    margin: 0;
+}
+
+.productlist .products article .prow p {
+    font-size: 22px;
+    float: right;
+    margin: 0;
+}
+
+.productlist .products article .stern {
+    height: 45px;
+}
+
+.productlist .products article .stern p {
+    font-size: 22px;
+    line-height: 22px;
+    float: left;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.productlist .products article .stern a {
+    float: right;
+    display: block;
+    padding: 10px 20px;
+    height: 45px;
+    background-color: white;
+    border-radius: var(--borderradius);
+    color: black;
+    font-size: 22px;
+    line-height: 22px;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: transform .25s, box-shadow .25s, background-color .25s, border .25s;
+}
+
+.productlist .products article .stern a:hover, .productlist .products article .stern a:focus {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px black;
+}
+
+.productlist .products article .stern a:active {
+    transform: translateY(-0px);
+    box-shadow: none;
+}
+
+.productlist .products article .stern a:nth-child(2n+1) {
+    background-color: rgb(151, 27, 27, 0.00);
+    border: 2px solid white;
+    color: white;
+}
+
+.productlist .products article .stern a:nth-child(2n+1):hover, .productlist .products article .stern a:nth-child(2n+1):focus {
+    background-color: #971b1b;
+    border: 2px solid #971b1b;
+}
+
+
+.productlist header a:nth-child(2n+1) {
+    background-color: rgba(255, 255, 255, 0) !important;
+    border: 2px solid white !important;
+    margin-right: 20px !important;
+    color: white !important;
+    line-height: 22px;
+    padding: 7px 30px;
+}
+
+.productlist header a:nth-child(2n+1):hover, .productlist header a:nth-child(2n+1):focus {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
+
+.eventlist, .productlist {
+    width: /*1110px*/750px;
     max-width: calc(100% - 90px);
     margin: 50px auto;
     border-radius: var(--borderradius);
@@ -130,8 +231,8 @@ body {
     line-height: normal;
 }
 
-.eventlist .events {
-    padding: 20px 45px;
+.eventlist .events, .productlist .products {
+    padding: 0px 45px 20px;
 }
 
 .eventlist .events article {
@@ -139,57 +240,118 @@ body {
     background-color: var(--colorprimarydark);
     border-radius: var(--borderradiusbig);
     color: white;
+    padding: 15px 25px;
+    margin-top: 20px;
 }
 
-.eventlist .events article a {
-    color: white;
-    text-decoration: none;
-}
-
-.eventlist .events article .eventheader {
-    width: 100%;
-    padding: 15px 30px;
-    background-color: var(--colorprimary);
-    border-radius: var(--borderradiusbig);
-    color: white;
-    position: relative;
-}
-
-.eventheader h3 {
+.eventlist .events article h3 {
     font-size: 32px;
+    line-height: 32px;
     font-weight: bold;
     margin: 0;
 }
 
-.eventheader .infogrid {
+.infogrid {
     width: 100%;
     margin-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 25px;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 20px;
     row-gap: 10px;
 }
 
-.eventheader .infogrid p {
+.infogrid p {
     margin: 0;
     font-size: 20px;
 }
 
-.eventlist .events article .expander {
-    width: 100%;
-    display: block;
-    padding: 10px 30px;
-    font-size: 22px;
+.infogrid p:nth-child(3n+1) {
+    text-align: left;
+}
+
+.infogrid p:nth-child(3n+2) {
     text-align: center;
-    background-color: var(--colorprimary);
+}
+
+.infogrid p:nth-child(3n+3) {
+    text-align: right;
+}
+
+.infogrid .progressbar {
+    width: 100%;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.infogrid .progressbar span {
+    height: 100%;
+    width: 22%;
+    background-color: white;
+    display: block;
+}
+
+.eventlist .events article nav {
+    background: none;
+    /*overflow: auto;*/
+    height: 45px;
+    margin-top: 10px;
+}
+
+.eventlist .events article nav .rbutton {
+    display: block;
+    float: right;
+    padding: 10px 20px;
+    font-size: 22px;
+    line-height: 22px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: var(--borderradius);
+    text-align: center;
+    height: 45px;
+    margin-left: 20px;
+    transition: transform .25s, box-shadow .25s, background-color .25s;
+}
+
+.eventlist .events article nav .rbutton:hover, .eventlist .events article nav .rbutton:focus {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px black;
+}
+
+.eventlist .events article nav .rbutton:active {
+    transform: translateY(-0px);
+    box-shadow: none;
+}
+
+.eventlist .events article nav .rbutton:nth-child(2n+1) {
+    background-color: rgba(255, 255, 255, 0);
     color: white;
-    border-radius: 0 0 var(--borderradiusbig) var(--borderradiusbig);
+    border: 2px solid white;
+}
+
+.eventlist .events article nav .rbutton:nth-child(2n+1):hover, .eventlist .events article nav .rbutton:nth-child(2n+1):focus {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.eventlist .events article nav .lbutton {
+    float: left;
+    display: block;
+    padding-top: 15px;
+    font-size: 22px;
+    line-height: 22px;
+    color: white;
+    text-decoration: none;
+    height: 45px;
 }
 
 
 
+
+
 .profileeditor {
-    width: 1440px;
+    width: 1110px;
     max-width: calc(100% - 90px);
     margin: 50px auto;
     border-radius: var(--borderradius);
@@ -197,7 +359,7 @@ body {
     line-height: normal;
 }
 
-.profileeditor header, .eventlist header {
+.profileeditor header, .eventlist header, .productlist header {
     width: 100%;
     height: 60px;
     background-color: var(--colortertiary);
@@ -205,7 +367,7 @@ body {
     border-radius: var(--borderradius);
 }
 
-.profileeditor header h2, .eventlist header h2 {
+.profileeditor header h2, .eventlist header h2, .productlist header h2 {
     float: left;
     margin: 0;
     color: white;
@@ -214,7 +376,7 @@ body {
     line-height: 24px;
 }
 
-.profileeditor header a, .eventlist header a {
+.profileeditor header a, .eventlist header a, .productlist header a {
     float: right;
     height: 40px;
     font-size: 20px;
@@ -228,13 +390,13 @@ body {
     line-height: 20px;
 }
 
-.profileeditor header a:hover, .profileeditor header a:focus, .eventlist header a:hover, .eventlist header a:focus {
+.profileeditor header a:hover, .profileeditor header a:focus, .eventlist header a:hover, .eventlist header a:focus, .productlist header a:hover, .productlist header a:focus {
     /*background-color: var(--colorsecondaryactive);*/
     transform: translateY(-4px);
     box-shadow: 0px 4px 6px rgba(0,0,0,0.75);
 }
 
-.profileeditor header a:active, .eventlist header a:active {
+.profileeditor header a:active, .eventlist header a:active, .productlist header a:active {
     transform: translateY(-0px);
     box-shadow: none;
 }
@@ -270,10 +432,23 @@ body {
 }
 
 .profileeditor #profileform #deletebut {
-    width: 100%;
+    display: block;
+    float: left;
     padding: 10px 20px;
     font-size: 20px;
     background-color: #971b1b;
     color: white;
     border-radius: var(--borderradius);
+    text-decoration: none;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.profileeditor #profileform #deletebut:hover, .profileeditor #profileform #deletebut:focus {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+}
+
+.profileeditor #profileform #deletebut:active {
+    transform: translateY(0px);
+    box-shadow: none;
 }
