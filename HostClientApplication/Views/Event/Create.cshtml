@@ -33,9 +33,9 @@
 
                     <input asp-for="City" type="text" placeholder="Stad" required>
                 </div>
-                <div class="input-box">
+                <div>
 
-                    <input asp-for="VenueId" type="text" placeholder="Venue" required>
+                    @Html.DropDownList("LocalId", null, htmlAttributes: new { @class = "input-box" })
                 </div>
                 <div class="input-box">
                    

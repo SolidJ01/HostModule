@@ -8,6 +8,7 @@ using System.Net.Http.Json;
 using HostClientApplication.Models;
 using Newtonsoft.Json;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HostClientApplication.Controllers
 {
@@ -21,8 +22,21 @@ namespace HostClientApplication.Controllers
 
 
         // GET: Event/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            List<Local> localList = new List<Local>();
+            // hämtar från databasen
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://193.10.202.72/LocalScheduleServiceAPI/api/Locals/"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    localList = JsonConvert.DeserializeObject<List<Local>>(apiResponse);
+
+                }
+                
+            }
+            ViewBag.LocalId = new SelectList(localList, "Id", "Name");
             Event e = new Event();
             return View(e);
         }

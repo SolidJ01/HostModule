@@ -19,6 +19,6 @@ namespace HostClientApplication.Models
         public string Category { get; set; }
         public string Priority { get; set; }
         public string Image { get; set; }
-        public int VenueId { get; set; }
+        public int LocalId { get; set; }
     }
 }
