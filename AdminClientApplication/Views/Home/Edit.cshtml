@@ -1,0 +1,31 @@
+﻿@model ExtendedHost
+
+
+<link href="~/css/site.css" rel="stylesheet" />
+<section class="profileeditor">
+    <header>
+
+        <h2>Redigera Arrangör</h2>
+        <a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+        <a id="deletebut" href="/Profile/Delete">Avsluta Konto</a>
+    </header>
+    <form id="profileform" action="/Profile/Index" method="post" enctype="multipart/form-data">
+        <section>
+            <input type="text" name="name" placeholder="Namn" value="@Model.Name" />
+            <input type="text" name="email" placeholder="Emailaddress" value="@Model.Username" />
+            <input type="text" name="phone" placeholder="Telefonnummer" value="@Model.Phone" />
+            <input type="text" name="website" placeholder="Webbsideadress" value="@Model.Website" />
+            <input type="text" name="accesslevel" placeholder="AccessLevel" value="@Model.AccessLevel" />
+            <input type="text" name="password" placeholder="Password" value="@Model.Password" />
+            <input type="hidden" name="userid" placeholder="UserId" value="@Model.UserId" />
+            
+            <div id="description" contenteditable="true">
+                @Model.Description
+            </div>
+            <input id="descriptionhidden" type="hidden" name="Beskrivning" placeholder="Beskrivning" value="" />
+
+
+        </section>
+
+    </form>
+</section>

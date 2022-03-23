@@ -1,26 +1,27 @@
-﻿
-<link href="~/css/site.css" rel="stylesheet" />
-<section class="profileeditor">
+﻿@model List<Host>
+
+<section class="eventlist">
     <header>
-
-        <h2>Redigera Arrangör</h2>
-        <a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
-        <a id="deletebut" href="/Profile/Delete">Avsluta Konto</a>
+        <h2>Arrangörer</h2><a href="/Home/Create">Ny</a>
     </header>
-    <form id="profileform" action="/Profile/Index" method="post" enctype="multipart/form-data">
-        <section>
-            <input type="text" name="name" placeholder="Namn" value="" />
-            <input type="text" name="email" placeholder="Emailaddress" />
-            <input type="text" name="phone" placeholder="Telefonnummer" value="" />
-            <input type="text" name="website" placeholder="Webbsideadress" value="" />
-            <input type="text" name="website" placeholder="AccessLevel" value="" />
-            <div id="description" contenteditable="true">
-              
+    <section class="events">
+        @foreach (var host in Model) {
+        <article>
+            <div>
+                <h3>@host.Name</h3>
+                <h4>@host.Phone</h4>
+                <h4>@host.Website </h4>
             </div>
-            <input id="descriptionhidden" type="hidden" name="Beskrivning" placeholder="Beskrivning" value="" />
+            <nav>
+                <a href="/Home/Edit/@host.Id" class="rbutton">Redigera</a>
+            </nav>
 
-            
-        </section>
+        </article>
+        }
+       
 
-    </form>
+
+    </section>
+    
 </section>
+
