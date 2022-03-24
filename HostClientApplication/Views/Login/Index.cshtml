@@ -7,9 +7,10 @@
         <div>
             <h2>Inloggning</h2>
         </div>
-        @ViewBag.Message
-        <input type="text" name="name" placeholder="Username" />
+       <p> @ViewBag.Message</p>
+        <input type="text" name="name" placeholder="Email" />
         <input type="password" name="password" placeholder="Lösenord" />
         <input type="submit" value="Logga In" />
+        <a href="/Login/New/">Skapa Konto</a>
     </form>
 </section>
