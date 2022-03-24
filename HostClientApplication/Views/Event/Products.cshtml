@@ -1,0 +1,27 @@
+﻿@model EventProducts
+
+<section class="productlist">
+    <header>
+        <h2>Produkter | @Model.Name</h2>
+        <a href="http://193.10.202.71/GroupOne_WebClient/Product/ProductAdd?eventId=@Model.Id">Ny</a>
+        <a href="/Event/">Tillbaka</a>
+    </header>
+    <section class="products">
+        @foreach (var product in Model.Products)
+        {
+            <article>
+                <img src="@product.ImgPath" />
+                <div>
+                    <div class="prow">
+                        <h3>@product.Name</h3><p>@product.Price:-</p>
+                    </div>
+                    <div class="stern">
+                        <p>@product.StockQty st</p>
+                        <a href="http://193.10.202.71/GroupOne_WebClient/Product/ProductEdit/@product.Id">Redigera</a>
+                        <!--<a href="">Ta Bort</a>-->
+                    </div>
+                </div>
+            </article>
+        }
+    </section>
+</section>

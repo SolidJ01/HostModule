@@ -1,0 +1,53 @@
+﻿@model HostClientApplication.Models.LocalBooking
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div id="FlorimJobbarMycket" class="container">
+    <header>
+        <h2>Skapa ny Lokal</h2>
+    </header>
+    <div id="eventuppgifter">
+       
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="profileform"></div>
+                <div class="input-box">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <label asp-for="StartDateTime" class="control-label"></label>
+                    <input asp-for="StartDateTime" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <label asp-for="EndDateTime" class="control-label"></label>
+                    <input asp-for="EndDateTime" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <label asp-for="Category" class="control-label"></label>
+                    <input asp-for="Category" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <label asp-for="LocalId" class="control-label"></label>
+                    <input asp-for="LocalId" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <label asp-for="EventId" class="control-label"></label>
+                    <input asp-for="EventId" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <label asp-for="HostId" class="control-label"></label>
+                    <input asp-for="HostId" class="form-control" />
+                </div>
+                <div class="input-box">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        
+    </div>
+</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
