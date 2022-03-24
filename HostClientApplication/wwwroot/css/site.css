@@ -102,7 +102,7 @@ body {
     margin: 0 !important;
 }
 
-.logincontainer form input {
+.logincontainer form input, .logincontainer form select {
     width: 100%;
     margin: 20px auto 0;
     padding: 10px 20px;
