@@ -7,7 +7,7 @@
 <div id="FlorimJobbarMycket" class="container">
 
     <header>
-        <h2>Skapa/Redigera Event</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+        <h2>Redigera Event</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
     </header>
 
 
@@ -35,9 +35,9 @@
 
                 <input asp-for="City" type="text" placeholder="Stad" required>
             </div>
-            <div class="input-box">
+            <div>
 
-                <input asp-for="LocaleId" type="text" placeholder="Lokal" required>
+                @Html.DropDownList("LocalId", null, htmlAttributes: new { @class = "input-box" })
             </div>
             <div class="input-box">
 

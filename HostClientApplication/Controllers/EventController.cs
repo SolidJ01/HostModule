@@ -93,9 +93,7 @@ namespace HostClientApplication.Controllers
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     localList = JsonConvert.DeserializeObject<List<Local>>(apiResponse);
-
                 }
-                
             }
             ViewBag.LocalId = new SelectList(localList, "Id", "Name");
             Event e = new Event();
@@ -134,10 +132,26 @@ namespace HostClientApplication.Controllers
 
 
 
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit(int id)
         {
-            Event ed = new Event();
-            return View(ed);
+            Event e = new Event();
+            List<Local> localList = new List<Local>();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://193.10.202.74/EventAPI1/api/Events/" + id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    e = JsonConvert.DeserializeObject<Event>(apiResponse);
+                }
+                using (var response = await httpClient.GetAsync("http://193.10.202.72/LocalScheduleServiceAPI/api/Locals/"))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    localList = JsonConvert.DeserializeObject<List<Local>>(apiResponse);
+                }
+            }
+
+            ViewBag.LocalId = new SelectList(localList, "Id", "Name");
+            return View(e);
         }
         // POST: Event/Edit
         // To protect from overposting attacks, enable the specific properties you want to bind to.
