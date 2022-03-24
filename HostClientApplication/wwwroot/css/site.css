@@ -19,6 +19,10 @@ body {
     padding-top: /*60px*/
     106px;
     background-color: rgb(200, 200, 200) !important;
+    flex-direction: column;
+    justify-content: normal !important;
+    align-items: normal !important;
+    min-height: 100vh !important;
 }
 
 #navbar {
@@ -31,6 +35,14 @@ body {
     color: white;
     padding: 10px 45px;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.5);*/
+}
+
+#second-nav, footer {
+    width: 100%;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /*#navbar img, #navbar h1 {
@@ -56,20 +68,12 @@ body {
 }
 
 .logincontainer {
-    position: absolute;
-    top: /*60*/106px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - /*60*/106px);
 }
 
 .logincontainer form {
     width: 500px;
     /*margin: 100px auto;*/
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 100px auto;
     padding: 20px;
     background-color: white;
     position: relative;
