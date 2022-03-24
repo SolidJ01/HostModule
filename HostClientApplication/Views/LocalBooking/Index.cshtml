@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HostClientApplication.Models.LocalBooking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div id="FlorimJobbarMycket" class="container">
+    <div class="eventuppgifter">
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="profileform">
+            <thead>
+                <tr>
+                    <th  class="input-box">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th  class="input-box">
+                        @Html.DisplayNameFor(model => model.StartDateTime)
+                    </th>
+                    <th  class="input-box">
+                        @Html.DisplayNameFor(model => model.EndDateTime)
+                    </th>
+                    <th class="input-box">
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                    <th class="input-box">
+                        @Html.DisplayNameFor(model => model.LocalId)
+                    </th>
+                    <th class="input-box">
+                        @Html.DisplayNameFor(model => model.EventId)
+                    </th>
+                    <th class="input-box">
+                        @Html.DisplayNameFor(model => model.HostId)
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.StartDateTime)
+                        </td>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.EndDateTime)
+                        </td>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.Category)
+                        </td>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.LocalId)
+                        </td>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.EventId)
+                        </td>
+                        <td class="input-box">
+                            @Html.DisplayFor(modelItem => item.HostId)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

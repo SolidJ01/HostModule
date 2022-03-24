@@ -1,0 +1,81 @@
+﻿@model HostClientApplication.Models.Local
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div id="FlorimJobbarMycket" class="container">
+    <header>
+        <h2>Ta bort Lokal</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+    </header>
+
+    <div id="profileform">
+
+        <dl class="eventuppgifter">
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.ImgUrl)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.ImgUrl)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.Ramp)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.Ramp)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.MaxNumPeople)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.MaxNumPeople)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.ZIPCode)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.ZIPCode)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.City)
+            </dd>
+            <dt class="input-box">
+                @Html.DisplayNameFor(model => model.GPS)
+            </dt>
+            <dd class="input-box">
+                @Html.DisplayFor(model => model.GPS)
+            </dd>
+        </dl>
+
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>

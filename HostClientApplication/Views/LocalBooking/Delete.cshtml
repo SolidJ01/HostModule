@@ -1,0 +1,64 @@
+﻿@model HostClientApplication.Models.LocalBooking
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div id="FlorimJobbarMycket" class="container">
+    <header>
+        <h2>Ta bort Lokal</h2><a href="javascript:void(0)" onclick="SubmitProfile()">Spara</a>
+    </header>
+
+    <dl id="profileform">
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.StartDateTime)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.StartDateTime)
+        </dd>
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.EndDateTime)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.EndDateTime)
+        </dd>
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.LocalId)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.LocalId)
+        </dd>
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.EventId)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.EventId)
+        </dd>
+        <dt class="input-box">
+            @Html.DisplayNameFor(model => model.HostId)
+        </dt>
+        <dd class="input-box">
+            @Html.DisplayFor(model => model.HostId)
+        </dd>
+    </dl>
+
+        <form asp-action="DeleteAsync">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    
+</div>
