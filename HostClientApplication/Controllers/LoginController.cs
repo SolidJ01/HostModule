@@ -54,6 +54,7 @@ namespace HostClientApplication.Controllers
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
                 identity.AddClaim(new Claim(ClaimTypes.Name, host.Name));
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, host.Id.ToString()));
+                identity.AddClaim(new Claim(ClaimTypes.Sid, recievedLogin.AccessLevel.ToString()));
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
                 return RedirectToAction("", "Home");
@@ -129,6 +130,7 @@ namespace HostClientApplication.Controllers
             var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
             identity.AddClaim(new Claim(ClaimTypes.Name, host.Name));
             identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, host.Id.ToString()));
+            identity.AddClaim(new Claim(ClaimTypes.Sid, login.AccessLevel.ToString()));
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
             return RedirectToAction("", "Home");

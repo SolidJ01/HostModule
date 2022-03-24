@@ -22,7 +22,7 @@ namespace HostClientApplication.Models
         public int LocaleId { get; set; }
         public int HostId { get; set; }
         public string Picture { get; set; }
-        public int VenueId { get; set; }
+        //public int VenueId { get; set; }
         public List<Booking> Booking { get; set; }
 
         // "Local" attributes

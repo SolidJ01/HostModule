@@ -109,8 +109,9 @@ namespace HostClientApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Event eventFromView)
         {
-            
-                    
+            eventFromView.Priority = User.FindFirstValue(ClaimTypes.Sid);
+
+
             using (var response = await client.PostAsJsonAsync("http://193.10.202.74/EventAPI1/api/Events/ ", eventFromView))
             {
                 string apiResponse = await response.Content.ReadAsStringAsync();
@@ -145,6 +146,7 @@ namespace HostClientApplication.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Event content)
         {
+            content.Priority = User.FindFirstValue(ClaimTypes.Sid);
             var jsonString = JsonConvert.SerializeObject(content);
             var contentJson = new StringContent(jsonString, Encoding.UTF8, "application/Json");
 
